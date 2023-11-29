@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand bg-body-tertiary">
+  <div class="container-fluid">
+    <a
+      class="navbar-brand"
+      [routerLink]="['/']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Navbar</a
+    >
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a
+          class="nav-link active"
+          aria-current="page"
+          [routerLink]="['/activePost']"
+          routerLinkActive="active"
+          >Active Post</a
+        >
+        <a
+          class="nav-link"
+          [routerLink]="['/inactivePost']"
+          routerLinkActive="active"
+          >Inactive Post</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>

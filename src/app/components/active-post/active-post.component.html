@@ -1,0 +1,23 @@
+<div class="border mt-3" *ngFor="let post of arrayPost">
+  <div
+    [ngClass]="{
+      ' bg-warning ': post.type === 'news',
+      'bg-dark text-white': post.type === 'politic',
+      'bg-info': post.type === 'education'
+    }"
+  >
+    <div class="p-3 pb-0"><h2>Post</h2></div>
+    <hr />
+    <div class="p-3">
+      <h3>{{ post.title }}</h3>
+      <p class="mb-0">{{ post.body }}</p>
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary mb-3 ms-3"
+      (click)="modPost(post.id)"
+    >
+      Disable
+    </button>
+  </div>
+</div>
