@@ -11,4 +11,18 @@ export class PostService {
   async getJson() {
     return await (await fetch('../assets/db.json')).json();
   }
+  async getJson2() {
+    await (await fetch('../assets/db.json')).json().then((resp) => {
+      this.posts = resp;
+      console.log(this.posts);
+    });
+  }
+
+  modPost(index: number) {
+    this.posts.forEach((post) => {
+      if (post.id === index) {
+        post.active === true ? (post.active = false) : (post.active = true);
+      }
+    });
+  }
 }
